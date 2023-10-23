@@ -1,0 +1,15 @@
+{
+    "name": "InfoMasterItem",
+    "description": "InfoMasterItem",
+    "preview": "",
+    "type": "visualization",
+    "version": "1.0.0",
+    "author": "Infodati",
+    "homepage": "",
+    "keywords": "qlik-sense, visualization",
+    "license": "MIT",
+    "repository": "",
+    "dependencies": {
+        "qlik-sense": ">=2.1.x"
+    }
+}
