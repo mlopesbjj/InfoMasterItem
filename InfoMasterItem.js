@@ -161,7 +161,7 @@ function ( qlik, $, cssContent ) {
 									qFieldLabels: [aCell.children[1].innerText.trim().replace("<", ">").replace(">", "<")],
 									qLabelExpression: "'" + aCell.children[2].innerText.trim().replace("<", ">").replace(">", "<") + "'"
 								},
-								qMetaDef: {"title":aCell.children[1].innerText.trim().replace("<", ">").replace(">", "<"), "tags":["#d_infodati_"+aCell.children[1].innerText.trim().replace("<", ">").replace(">", "<")], "description": aCell.children[4].innerText.trim().replace("<", ">").replace(">", "<")}
+								qMetaDef: {"title":aCell.children[1].innerText.trim().replace("<", ">").replace(">", "<"), "tags":["#d_myobj_"+aCell.children[1].innerText.trim().replace("<", ">").replace(">", "<")], "description": aCell.children[4].innerText.trim().replace("<", ">").replace(">", "<")}
 							}
 						});
 					}
@@ -201,7 +201,7 @@ function ( qlik, $, cssContent ) {
 											qThou: ""
 										}
 									},
-									qMetaDef: {"title": aCell.children[1].innerText.trim().replace("<", ">").replace(">", "<"), "tags":["#m_infodati_"+aCell.children[1].innerText.trim().replace("<", ">").replace(">", "<")], "description": aCell.children[4].innerText.trim() != "-" ? aCell.children[4].innerText.trim().replace("<", ">").replace(">", "<") : ""}
+									qMetaDef: {"title": aCell.children[1].innerText.trim().replace("<", ">").replace(">", "<"), "tags":["#m_myobj_"+aCell.children[1].innerText.trim().replace("<", ">").replace(">", "<")], "description": aCell.children[4].innerText.trim() != "-" ? aCell.children[4].innerText.trim().replace("<", ">").replace(">", "<") : ""}
 								}
 							});
 					}
@@ -225,7 +225,7 @@ function ( qlik, $, cssContent ) {
 								var xret = layout.qMeasureList.qItems;
 									for (var i=0; i < layout.qMeasureList.qItems.length; i++) {
 									if (xret[i].qMeta.tags.length > 0) {
-										if (xret[i].qMeta.tags[0].substring(0, 12) === "#m_infodati_") {
+										if (xret[i].qMeta.tags[0].substring(0, 12) === "#m_myobj_") {
 											app.model.engineApp.destroyMeasure(xret[i].qInfo.qId);
 										}
 									}
@@ -251,7 +251,7 @@ function ( qlik, $, cssContent ) {
 								var xret = layout.qDimensionList.qItems;
 								for (var i=0; i < layout.qDimensionList.qItems.length; i++) {
 									if (xret[i].qMeta.tags.length > 0) {
-										if (xret[i].qMeta.tags[0].substring(0, 12) === "#d_infodati_") {
+										if (xret[i].qMeta.tags[0].substring(0, 12) === "#d_myobj_") {
 											app.model.engineApp.destroyDimension(xret[i].qInfo.qId);
 										}
 									}
